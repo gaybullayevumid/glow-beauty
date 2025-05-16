@@ -18,6 +18,7 @@ class Category(models.Model):
 
 class Brand(models.Model):
     name = models.CharField(max_length=255)
+    menu = models.ForeignKey(Menu, on_delete=models.CASCADE, null=True, blank=True, related_name='brands')
 
     def __str__(self):
         return self.name
