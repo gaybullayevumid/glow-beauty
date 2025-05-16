@@ -11,6 +11,8 @@ from rest_framework.permissions import AllowAny
 # Create your views here.
 
 class SignupAPIView(APIView):
+    permission_classes = [AllowAny]
+
     def post(self, request):
         serializer = SignupSerializer(data=request.data)
         if serializer.is_valid():
@@ -19,7 +21,7 @@ class SignupAPIView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class LoginAPIView(APIView):
-    permission_classes = [AllowAny]  # Bu yerda authenticated bo‘lish shart emas!
+    permission_classes = [AllowAny]
 
     def post(self, request):
         email = request.data.get('email')
