@@ -30,7 +30,7 @@ INSTALLED_APPS = [
 
     # local apps
     'account',
-    'base'
+    # 'base'
 ]
 
 MIDDLEWARE = [
@@ -51,7 +51,7 @@ REST_FRAMEWORK = {
 
 ROOT_URLCONF = "config.urls"
 
-AUTH_USER_MODEL = 'users.User'
+# AUTH_USER_MODEL = 'users.User'
 
 TEMPLATES = [
     {
