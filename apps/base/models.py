@@ -2,12 +2,21 @@ from django.db import models
 
 # Create your models here.
 
-class NewCategory(models.Model):
+class Menu(models.Model):
     name = models.CharField(max_length=20)
-    image = models.ImageField(upload_to='media/new-category/')
 
     def __str__(self):
         return self.name
+
+class Category(models.Model):
+    name = models.CharField(max_length=20)
+    image = models.ImageField(upload_to='media/category/')
+    menu = models.ForeignKey(Menu, on_delete=models.CASCADE, related_name='categories')
+
+    def __str__(self):
+        return self.name
+
+
 
 class Product(models.Model):
     title = models.CharField(max_length=255)

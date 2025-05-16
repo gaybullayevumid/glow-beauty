@@ -4,6 +4,6 @@ from .serializers import *
 
 # Create your views here.
 
-class NewCategoryListCreateView(generics.ListCreateAPIView):
-    queryset = NewCategory.objects.all()
+class CategoryListCreateView(generics.ListCreateAPIView):
+    queryset = Category.objects.all()
     serializer_class = NewCategorySerializer
