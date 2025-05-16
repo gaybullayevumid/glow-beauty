@@ -2,6 +2,13 @@ from django.db import models
 
 # Create your models here.
 
+class NewCategory(models.Model):
+    name = models.CharField(max_length=20)
+    image = models.ImageField(upload_to='media/new-category/')
+
+    def __str__(self):
+        return self.name
+
 class Product(models.Model):
     title = models.CharField(max_length=255)
     brand = models.CharField(max_length=255)

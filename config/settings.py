@@ -32,7 +32,7 @@ INSTALLED_APPS = [
 
     # local apps
     'apps.account',
-    # 'apps.base'
+    'apps.base'
 ]
 
 MIDDLEWARE = [
@@ -51,8 +51,8 @@ REST_FRAMEWORK = {
     ],
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
-    ],
-}   
+    ]
+}
 
 ROOT_URLCONF = "config.urls"
 
@@ -129,3 +129,15 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+SWAGGER_SETTINGS = {
+    'SECURITY_DEFINITIONS': {
+        'Token': {
+            'type': 'apiKey',
+            'in': 'header',
+            'name': 'Authorization',
+            'description': 'Token formatida kiriting: Token <sizning_tokeningiz>',
+        }
+    },
+    'USE_SESSION_AUTH': False,
+}

@@ -1,13 +1,9 @@
-from rest_framework import viewsets
-from .models import Product
-from .serializers import ProductSerializer
+from rest_framework import generics
+from .models import *
+from .serializers import *
 
 # Create your views here.
 
-from rest_framework import viewsets
-from .models import Product
-from .serializers import ProductSerializer
-
-class ProductView(viewsets.ModelViewSet):
-    queryset = Product.objects.all()
-    serializer_class = ProductSerializer
+class NewCategoryListCreateView(generics.ListCreateAPIView):
+    queryset = NewCategory.objects.all()
+    serializer_class = NewCategorySerializer
